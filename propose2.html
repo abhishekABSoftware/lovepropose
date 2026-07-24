@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Very Important Proposal (No Pressure)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff0f3;
+      color: #333;
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    /* Header / Hero */
+    header {
+      background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 10px 20px rgba(255, 117, 140, 0.2);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-top: 3rem;
+    }
+
+    section h2 {
+      text-align: center;
+      color: #ff4d6d;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Feature / Pitch Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      text-align: center;
+      border: 1px solid #ffe6e8;
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      color: #c9184a;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      border-left: 3px solid #ffb3c1;
+      margin-left: 20px;
+      padding-left: 20px;
+    }
+
+    .timeline-item {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '❤️';
+      position: absolute;
+      left: -33px;
+      top: 0;
+      background: #fff0f3;
+      border-radius: 50%;
+    }
+
+    .timeline-item h4 {
+      color: #ff4d6d;
+    }
+
+    /* Testimonials */
+    .testimonial {
+      background: #fff;
+      padding: 1.2rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      border-left: 5px solid #ff758c;
+      font-style: italic;
+    }
+
+    .testimonial span {
+      display: block;
+      margin-top: 5px;
+      font-weight: bold;
+      font-style: normal;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    /* The Proposal Section */
+    .proposal-box {
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;
+      position: relative;
+      border: 2px solid #ffccd5;
+    }
+
+    .begging-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      object-fit: cover;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 2rem;
+      min-height: 60px;
+    }
+
+    button {
+      padding: 14px 36px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+
+    #yes-btn {
+      background-color: #25d366;
+      color: white;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      transition: transform 0.2s;
+    }
+
+    #yes-btn:hover {
+      transform: scale(1.1);
+    }
+
+    #no-btn {
+      background-color: #ff4d4d;
+      color: white;
+      box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
+      position: absolute;
+      transition: all 0.15s ease-out;
+    }
+
+    #success-screen {
+      display: none;
+    }
+
+    #success-screen h2 {
+      font-size: 2.5rem;
+      color: #ff4d6d;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- 1. HERO HEADER -->
+  <header>
+    <!-- Change 'Priya' to her actual name if needed -->
+    <h1>Priya, The Ultimate Pitch Presentation 💼💍</h1>
+    <p>Exhibits A through Z on why marrying me is a top-tier life choice.</p>
+  </header>
+
+  <div class="container">
+
+    <!-- 2. WHY PICK ME? (PITCH DECK) -->
+    <section>
+      <h2>Why You Should Pick Me</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="card-icon">🍟</div>
+          <h3>Food Sharing</h3>
+          <p>Guaranteed 50% of my french fries given to you without complaining.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🕷️</div>
+          <h3>Bug Relocation</h3>
+          <p>Certified expert in escorting spiders outside safely at 2 AM.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📺</div>
+          <h3>Movie Choices</h3>
+          <p>Will let you pick what we watch 90% of the time (even reality TV).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. OUR TIMELINE -->
+    <section>
+      <h2>Our Journey So Far</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4>Day 1: The Meet</h4>
+          <p>You made the exceptional choice to talk to me.</p>
+        </div>
+        <div class="timeline-item">
+          <h4>First Date</h4>
+          <p>I tried pretending to be normal and civilized.</p>
+        </div>
+        <div class="timeline-item">
+          <h4>Present Day</h4>
+          <p>Still haven't gotten tired of each other!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. TESTIMONIALS -->
+    <section>
+      <h2>Verified User Reviews</h2>
+      <div class="testimonial">
+        "5 out of 5 stars. Please take him off my hands!"
+        <span>— My Mom</span>
+      </div>
+      <div class="testimonial">
+        "He gives really good belly rubs."
+        <span>— The Dog</span>
+      </div>
+      <div class="testimonial">
+        "He's okay, I guess."
+        <span>— Best Friend</span>
+      </div>
+    </section>
+
+    <!-- 5. THE PROPOSAL (BEGGING GIF & RUNAWAY BUTTON) -->
+    <section>
+      <div class="proposal-box" id="main-box">
+        <div id="proposal-screen">
+          
+      <!-- Begging Character GIF -->
+<!-- Embedded direct image (Never breaks or fails to load) -->
+<img id="begging-gif" class="begging-img" src="https://c.tenor.com/-Je2Vu4NfGIAAAAi/meobeo-begging.gif' width='140' height='150' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥺</text></svg>" alt="Begging character">
+
+
+
+<h2 style="margin-bottom: 0.5rem;">The Final Question...</h2>
+<p style="font-size: 1.5rem; font-weight: bold; color: #d63384;">
+  Priya, will you marry me? 💍
+</p>          <div class="btn-group">
+            <button id="yes-btn">YES! ❤️</button>
+            <button id="no-btn">No 😜</button>
+          </div>
+        </div>
+
+        <div id="success-screen">
+          <h2>WOOHOO! 🎉❤️</h2>
+          <p style="font-size: 1.3rem; margin-top: 10px;">I knew you'd make the right choice! Best decision ever! ✨</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('no-btn');
+    const yesBtn = document.getElementById('yes-btn');
+    const proposalScreen = document.getElementById('proposal-screen');
+    const successScreen = document.getElementById('success-screen');
+    const beggingImg = document.getElementById('begging-gif');
+
+    // Array of funny text prompts for the button
+    const funnyTexts = [
+      "Nice try!",
+      "Nope! 😜",
+      "Think again!",
+      "Not an option!",
+      "Wrong button!",
+      "Over here!",
+      "Almost! 😂",
+      "Please say YES! 🥺"
+    ];
+
+   // Array of dramatic begging/pleading GIFs
+// Reliable begging/pleading GIFs
+const beggingGifs = [
+  "https://media.tenor.com/OCEHuWSxHgMAAAAj/emicat-begging.gif",
+  "https://media.tenor.com/OCEHuWSxHgMAAAAj/emicat-begging.gif",
+  
+];
+  function dodgeButton() {
+      const padding = 60;
+      const maxX = window.innerWidth - noBtn.offsetWidth - padding;
+      const maxY = window.innerHeight - noBtn.offsetHeight - padding;
+
+      const randomX = Math.max(padding, Math.floor(Math.random() * maxX));
+      const randomY = Math.max(padding, Math.floor(Math.random() * maxY));
+
+      noBtn.style.position = 'fixed';
+      noBtn.style.left = `${randomX}px`;
+      noBtn.style.top = `${randomY}px`;
+
+      // Change text randomly
+      const randomText = funnyTexts[Math.floor(Math.random() * funnyTexts.length)];
+      noBtn.innerText = randomText;
+
+      // Swap begging GIF randomly
+      const randomGif = beggingGifs[Math.floor(Math.random() * beggingGifs.length)];
+      beggingImg.src = randomGif;
+    }
+
+    // Triggers on mouse hover & touch devices
+    noBtn.addEventListener('mouseover', dodgeButton);
+    noBtn.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      dodgeButton();
+    });
+
+    // Success action on YES!
+    yesBtn.addEventListener('click', () => {
+      proposalScreen.style.display = 'none';
+      successScreen.style.display = 'block';
+
+      // Launch celebration confetti
+      confetti({
+        particleCount: 200,
+        spread: 120,
+        origin: { y: 0.6 }
+      });
+    });
+  </script>
+
+</body>
+</html>
